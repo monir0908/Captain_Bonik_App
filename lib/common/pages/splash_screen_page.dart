@@ -1,5 +1,5 @@
 import 'package:captain_bonik_app/common/pages/authentication_page.dart';
-import 'package:captain_bonik_app/common/pages/user_land_page.dart';
+import 'package:captain_bonik_app/common/utils/app.dart';
 import 'package:captain_bonik_app/common/widgets/rounded_corner.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +8,7 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen> with App{
   @override
   void initState() {
     super.initState();
@@ -16,6 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   @override
   Widget build(BuildContext context) {
+    App.initApp(context);
     return RoundedCorner(child:Container(
       child: Center(child: Text('Captain Banik\nSplash Screen',
       style: TextStyle(fontSize: 24,color: Colors.indigo),
