@@ -1,4 +1,6 @@
+import 'package:captain_bonik_app/common/pages/sign_in_page.dart';
 import 'package:captain_bonik_app/common/pages/sign_up_page.dart';
+import 'package:captain_bonik_app/common/pages/verify_otp_page.dart';
 import 'package:captain_bonik_app/common/utils/app.dart';
 import 'package:captain_bonik_app/common/widgets/language_change_switch.dart';
 import 'package:captain_bonik_app/common/widgets/rounded_corner.dart';
@@ -12,6 +14,7 @@ class AuthenticationPage extends StatefulWidget {
 }
 
 class _AuthenticationPageState extends State<AuthenticationPage> with App {
+  bool _signUpHandler=true;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +48,7 @@ class _AuthenticationPageState extends State<AuthenticationPage> with App {
               Padding(
                 padding: const EdgeInsets.only(left: 24, top: 16, bottom: 24),
                 child: Text(
-                  lbl.signUpHeader,
+                  _signUpHandler?lbl.signUpHeader:lbl.signInHeader,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 32,
@@ -63,8 +66,12 @@ class _AuthenticationPageState extends State<AuthenticationPage> with App {
                     topLeft: Radius.circular(15),
                   ),
                 ),
-                child:SignUpPage(),
-              ))
+                child:_signUpHandler?SignUpPage(
+                  onChanged: _onChangedSignUp,
+                ):SignInPage(
+                  onChanged: _onChangedSignIn,
+                ),
+              )),
             ],
           ),
         )
@@ -84,5 +91,16 @@ class _AuthenticationPageState extends State<AuthenticationPage> with App {
       });
     }
     // });
+  }
+
+  void _onChangedSignUp(value) {
+setState(() {
+  _signUpHandler=false;
+});
+  }
+  void _onChangedSignIn(value) {
+    setState(() {
+      _signUpHandler=true;
+    });
   }
 }

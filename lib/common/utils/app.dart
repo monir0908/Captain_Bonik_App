@@ -49,45 +49,45 @@ class _AppColor {
   static _AppColor _appColor;
   static _AppColor get appColor => _appColor ?? (_appColor = _AppColor._());
 
-  // colors
-  Color get headerTextColorBlack => Color(0xff6A6A6A);
-  Color get onBoardingContentTextColor => Color(0xFF8257FD);
-
+  // // colors
+  // Color get headerTextColorBlack => Color(0xff6A6A6A);
+  // Color get onBoardingContentTextColor => Color(0xFF8257FD);
+  //
   get primaryWhite => Colors.white;
-  get primaryRed => Color(0xffCE59FF); //Color(0xFFF96363);
-  get primaryGradient =>
-      LinearGradient(colors: [Color(0xffda53FF), Color(0xff5F91FF)]);
-  get primaryBlue => Color(0xff0074BC);
-  LinearGradient get redGradient =>
-      LinearGradient(colors: [Color(0xffFC5C82), Color(0xffFFAFB4)]);
-  LinearGradient get skyGradient =>
-      LinearGradient(colors: [Color(0xff23A6F4), Color(0xff9FF3E9)]);
-  LinearGradient get purpleGradient =>
-      LinearGradient(colors: [Color(0xff817FFE), Color(0xffF6C4FE)]);
-  LinearGradient get orangeGradient =>
-      LinearGradient(colors: [Color(0xffFE9D55), Color(0xffFBEA95)]);
-
-  LinearGradient get blueGradient =>
-      LinearGradient(colors: [Color(0xffA3D6F0), Color(0xff0074BC)]);
-
-  LinearGradient get transParentGradient =>
-      LinearGradient(colors: [Colors.white, Colors.white]);
-  LinearGradient get grayGradient =>
-      LinearGradient(colors: [Colors.grey[400], Colors.grey[400]]);
-  LinearGradient get onlyBlueGradient =>
-      LinearGradient(colors: [Color(0xff0074BC), Color(0xff0074BC)]);
-
-  LinearGradient get deepBlueGradient =>
-      LinearGradient(colors: [Color(0xff2E3192), Color(0xff2E3192)]);
-
-  LinearGradient get bleLightblueGradient => LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: <Color>[
-      Color(0xFF2D3192),
-      Color(0xff45AEFF),
-    ],
-  );
+  // get primaryRed => Color(0xffCE59FF); //Color(0xFFF96363);
+  // get primaryGradient =>
+  //     LinearGradient(colors: [Color(0xffda53FF), Color(0xff5F91FF)]);
+  // get primaryBlue => Color(0xff0074BC);
+  // LinearGradient get redGradient =>
+  //     LinearGradient(colors: [Color(0xffFC5C82), Color(0xffFFAFB4)]);
+  // LinearGradient get skyGradient =>
+  //     LinearGradient(colors: [Color(0xff23A6F4), Color(0xff9FF3E9)]);
+  // LinearGradient get purpleGradient =>
+  //     LinearGradient(colors: [Color(0xff817FFE), Color(0xffF6C4FE)]);
+  // LinearGradient get orangeGradient =>
+  //     LinearGradient(colors: [Color(0xffFE9D55), Color(0xffFBEA95)]);
+  //
+  // LinearGradient get blueGradient =>
+  //     LinearGradient(colors: [Color(0xffA3D6F0), Color(0xff0074BC)]);
+  //
+  // LinearGradient get transParentGradient =>
+  //     LinearGradient(colors: [Colors.white, Colors.white]);
+  // LinearGradient get grayGradient =>
+  //     LinearGradient(colors: [Colors.grey[400], Colors.grey[400]]);
+  // LinearGradient get onlyBlueGradient =>
+  //     LinearGradient(colors: [Color(0xff0074BC), Color(0xff0074BC)]);
+  //
+  // LinearGradient get deepBlueGradient =>
+  //     LinearGradient(colors: [Color(0xff2E3192), Color(0xff2E3192)]);
+  //
+  // LinearGradient get bleLightblueGradient => LinearGradient(
+  //   begin: Alignment.topLeft,
+  //   end: Alignment.bottomRight,
+  //   colors: <Color>[
+  //     Color(0xFF2D3192),
+  //     Color(0xff45AEFF),
+  //   ],
+  // );
 
 
 }
@@ -300,16 +300,17 @@ enum AppLanguage{
 abstract class Language{
   String get signUpHeader;
   String get nameTitle;
-  String get emailOrPhoneTitle;
-  String get passwordTitle;
+  String get phoneTitle;
+  String get emailTitle;
   String get nameHint;
-  String get emailOrPhoneHint;
-  String get passwordHint;
+  String get phoneHint;
+  String get emailHint;
   String get continueText;
-
-
-
-
+  String get signInHeader;
+  String get otpVerification;
+  String get otpDescription;
+  String get resendOTP;
+  String get otpVerifyOTP;
 
 }
 //************************** ENGLISH LANGUAGE ******************************
@@ -320,12 +321,17 @@ class _EnglishLanguage implements Language{
 
   String get signUpHeader=>'Create account';
   String get nameTitle=>'Name';
-  String get emailOrPhoneTitle=>'Email or Mobile number';
-  String get passwordTitle=>'Password';
+  String get phoneTitle=>'Mobile number';
+  String get emailTitle=>'Email (optional)';
   String get nameHint=>'Enter your full name';
-  String get emailOrPhoneHint=>'Enter your email or mobile number';
-  String get passwordHint=>'Enter your password';
+  String get phoneHint=>'Enter your mobile number';
+  String get emailHint=>'Enter your email';
   String get continueText=>'Continue';
+  String get signInHeader=>'Log in';
+  String get otpVerification => "Verification";
+  String get otpDescription => "You will receive a 4 digit OTP shortly. Type your OTP code here and tap on \"Verify OTP\" button.";
+  String get resendOTP => "Resend OTP";
+  String get otpVerifyOTP => "Verify OTP";
 
 }
 //************************** BANGLA LANGUAGE *******************************
@@ -333,16 +339,18 @@ class _BanglaLanguage  implements Language{
   _BanglaLanguage._();
   static Language _instance;
   static Language get instance => _instance ?? (_instance = _BanglaLanguage._());
-
-
   String get signUpHeader=>'একাউন্ট তৈরি করুন';
   String get nameTitle=>'নাম';
-  String get emailOrPhoneTitle=>'ইমেইল অথবা ফোন নাম্বার';
-  String get passwordTitle=>'পাসওয়ার্ড';
+  String get phoneTitle=>'মোবাইল নাম্বার';
+  String get emailTitle=>'ইমেইল (ঐচ্ছিক)';
   String get nameHint=>'আপনার পুরো নামটি লিখুন';
-  String get emailOrPhoneHint=>'আপনার ইমেইল অথবা ফোন নাম্বার দিন';
-  String get passwordHint=>'আপনার পাসওয়ার্ড লিখুন';
+  String get phoneHint=>'আপনার মোবাইল নাম্বার দিন';
+  String get emailHint=>'আপনার ইমেইল লিখুন';
   String get continueText=>'চালিয়ে যান';
-
+  String get signInHeader=>'লগ ইন';
+  String get otpVerification => "ভেরিফিকেশন";
+  String get otpDescription => "আপনি শীঘ্রই একটি ৪ ডিজিটের ওটিপি পাবেন। আপনার ওটিপি কোডটি এখানে টাইপ করুন এবং \"ভেরিফাই ওটিপি \" বোতামে  চাপুন।";
+  String get resendOTP => "পুনরায় ও-টি-পি পাঠান";
+  String get otpVerifyOTP => "ভেরিফাই ওটিপি";
 
 }

@@ -217,6 +217,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  sms_retriever_api:
+    dependency: "direct main"
+    description:
+      name: sms_retriever_api
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.3"
   source_span:
     dependency: transitive
     description:
