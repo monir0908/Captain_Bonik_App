@@ -4,14 +4,14 @@ import 'package:captain_bonik_app/common/widgets/bottom_navigation_bar.dart';
 import 'package:captain_bonik_app/common/widgets/rounded_corner.dart';
 import 'package:flutter/material.dart';
 
-import 'buyer_home_page.dart';
+import 'merchandiser_home_page.dart';
 
-class UserLandPage extends StatefulWidget {
+class MerchandiserUserLandingPage extends StatefulWidget {
   @override
-  _UserLandPageState createState() => _UserLandPageState();
+  _MerchandiserUserLandingPageState createState() => _MerchandiserUserLandingPageState();
 }
 
-class _UserLandPageState extends State<UserLandPage> with App{
+class _MerchandiserUserLandingPageState extends State<MerchandiserUserLandingPage> with App{
   final _activeColor = Colors.blue;
   final _inactiveColor = Colors.grey.withOpacity(.6);
   StreamController<int> _tabBarController = StreamController.broadcast();
@@ -88,7 +88,22 @@ class _UserLandPageState extends State<UserLandPage> with App{
                     activeColor: _activeColor,
                     inactiveColor: _inactiveColor,
                   ),
-
+                  BottomNavBarItem(
+                    icon: Icon(Icons.home),
+                    title: Text('Home'),
+                    activeColor: _activeColor,
+                    inactiveColor: _inactiveColor,
+                  ), BottomNavBarItem(
+                    icon: Icon(Icons.home),
+                    title: Text('Home'),
+                    activeColor: _activeColor,
+                    inactiveColor: _inactiveColor,
+                  ), BottomNavBarItem(
+                    icon: Icon(Icons.home),
+                    title: Text('Home'),
+                    activeColor: _activeColor,
+                    inactiveColor: _inactiveColor,
+                  ),
                 ],
               );
             }
@@ -97,11 +112,14 @@ class _UserLandPageState extends State<UserLandPage> with App{
           controller: _pageViewController,
           physics: NeverScrollableScrollPhysics(),
           children: <Widget>[
-            BuyerHomePage(),
-            BuyerHomePage(),
-            BuyerHomePage(),
-            BuyerHomePage(),
-            BuyerHomePage(),
+            MerchandiserHomePage(),
+            MerchandiserHomePage(),
+            MerchandiserHomePage(),
+            MerchandiserHomePage(),
+            MerchandiserHomePage(),
+            MerchandiserHomePage(),
+            MerchandiserHomePage(),
+            MerchandiserHomePage(),
           ],
         ),
       ),
