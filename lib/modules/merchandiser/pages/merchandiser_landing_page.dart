@@ -5,6 +5,7 @@ import 'package:captain_bonik_app/common/widgets/rounded_corner.dart';
 import 'package:flutter/material.dart';
 
 import 'merchandiser_home_page.dart';
+import 'merchandiser_profile_page.dart';
 
 class MerchandiserUserLandingPage extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class MerchandiserUserLandingPage extends StatefulWidget {
 }
 
 class _MerchandiserUserLandingPageState extends State<MerchandiserUserLandingPage> with App{
-  final _activeColor = Colors.blue;
+  final _activeColor = Color(0xff006A4E);
   final _inactiveColor = Colors.grey.withOpacity(.6);
   StreamController<int> _tabBarController = StreamController.broadcast();
   PageController _pageViewController = PageController(initialPage: 0,keepPage: true,);
@@ -65,8 +66,8 @@ class _MerchandiserUserLandingPageState extends State<MerchandiserUserLandingPag
                     inactiveColor: _inactiveColor,
                   ),
                   BottomNavBarItem(
-                    icon: Icon(Icons.home),
-                    title: Text('Home'),
+                    icon: Icon(Icons.account_circle_rounded),
+                    title: Text('Profile'),
                     activeColor: _activeColor,
                     inactiveColor: _inactiveColor,
                   ),
@@ -88,22 +89,7 @@ class _MerchandiserUserLandingPageState extends State<MerchandiserUserLandingPag
                     activeColor: _activeColor,
                     inactiveColor: _inactiveColor,
                   ),
-                  BottomNavBarItem(
-                    icon: Icon(Icons.home),
-                    title: Text('Home'),
-                    activeColor: _activeColor,
-                    inactiveColor: _inactiveColor,
-                  ), BottomNavBarItem(
-                    icon: Icon(Icons.home),
-                    title: Text('Home'),
-                    activeColor: _activeColor,
-                    inactiveColor: _inactiveColor,
-                  ), BottomNavBarItem(
-                    icon: Icon(Icons.home),
-                    title: Text('Home'),
-                    activeColor: _activeColor,
-                    inactiveColor: _inactiveColor,
-                  ),
+
                 ],
               );
             }
@@ -113,10 +99,7 @@ class _MerchandiserUserLandingPageState extends State<MerchandiserUserLandingPag
           physics: NeverScrollableScrollPhysics(),
           children: <Widget>[
             MerchandiserHomePage(),
-            MerchandiserHomePage(),
-            MerchandiserHomePage(),
-            MerchandiserHomePage(),
-            MerchandiserHomePage(),
+            MerchandiserProfilePage(),
             MerchandiserHomePage(),
             MerchandiserHomePage(),
             MerchandiserHomePage(),

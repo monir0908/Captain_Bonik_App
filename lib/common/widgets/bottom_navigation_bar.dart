@@ -58,9 +58,11 @@ class BottomNavBar extends StatelessWidget {
           // width: double.infinity,
           height: containerHeight,
           padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
+          child:
+    // SingleChildScrollView(
+    //         scrollDirection: Axis.horizontal,
+    //         child:
+    Row(
               mainAxisAlignment: mainAxisAlignment,
               children: items.map((item) {
                 var index = items.indexOf(item);
@@ -78,7 +80,7 @@ class BottomNavBar extends StatelessWidget {
                 );
               }).toList(),
             ),
-          ),
+          // ),
         ),
       ),
     );
