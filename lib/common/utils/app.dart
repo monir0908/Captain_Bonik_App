@@ -23,7 +23,12 @@ mixin App {
     _contextApp = context;
   }
   //
-  // //Server Token
+  //Server Token
+  static String _token = "";
+  static String get serverToken => _token;
+  static void setToken(String token) {
+    _token = token;
+  }
   // static HomePageDataResponse _pageData;
   // static HomePageDataResponse get pageData => _pageData;
   // static int _userId;
@@ -54,7 +59,9 @@ class _AppColor {
   // Color get onBoardingContentTextColor => Color(0xFF8257FD);
   //
   get primaryWhite => Colors.white;
-  // get primaryRed => Color(0xffCE59FF); //Color(0xFFF96363);
+  get primaryColor => Color(0xff006A4E);
+
+// get primaryRed => Color(0xffCE59FF); //Color(0xFFF96363);
   // get primaryGradient =>
   //     LinearGradient(colors: [Color(0xffda53FF), Color(0xff5F91FF)]);
   // get primaryBlue => Color(0xff0074BC);

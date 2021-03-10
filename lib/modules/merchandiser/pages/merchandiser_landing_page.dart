@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:captain_bonik_app/common/utils/app.dart';
 import 'package:captain_bonik_app/common/widgets/bottom_navigation_bar.dart';
 import 'package:captain_bonik_app/common/widgets/rounded_corner.dart';
+import 'package:captain_bonik_app/modules/merchandiser/pages/page_product_upload.dart';
 import 'package:flutter/material.dart';
-
 import 'merchandiser_home_page.dart';
 import 'merchandiser_profile_page.dart';
 
@@ -72,8 +72,8 @@ class _MerchandiserUserLandingPageState extends State<MerchandiserUserLandingPag
                     inactiveColor: _inactiveColor,
                   ),
                   BottomNavBarItem(
-                    icon: Icon(Icons.home),
-                    title: Text('Home'),
+                    icon: Icon(Icons.upload_outlined),
+                    title: Text('Upload'),
                     activeColor: _activeColor,
                     inactiveColor: _inactiveColor,
                   ),
@@ -100,7 +100,7 @@ class _MerchandiserUserLandingPageState extends State<MerchandiserUserLandingPag
           children: <Widget>[
             MerchandiserHomePage(),
             MerchandiserProfilePage(),
-            MerchandiserHomePage(),
+            ProductUploadPage(),
             MerchandiserHomePage(),
             MerchandiserHomePage(),
           ],
